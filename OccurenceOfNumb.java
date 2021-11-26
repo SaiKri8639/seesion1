@@ -1,3 +1,7 @@
+package assignments;
+
+import java.util.Scanner;
+
 public class OccurenceOfNumb 
 {
  public static void main(String[] args)
@@ -12,7 +16,7 @@ public class OccurenceOfNumb
 	{
 		arr[i] =sc.nextInt();
 	}
-	int numb=arr[0];
+	/*int numb=arr[0];
 	for(int i=1;i<arr.length;i++)
 	{	
 	if(numb==arr[i])
@@ -27,6 +31,33 @@ public class OccurenceOfNumb
 	return;
 	
 	//System.out.println("number of occurence of the element: " +count);
+	}*/
+	System.out.println("enter thr value to search");
+	int find=sc.nextInt();
+
+	boolean found = false;
+
+
+
+	for (int n : arr)
+	{
+	 if (n == find)
+	 {
+	  found = true;
+	  count ++;
+	  //break;
+	}
+	}
+
+	if(found)
+	{
+	  System.out.println(find + " is found.");
+	}
+	  else
+	  {
+	    System.out.println(find + " is not found.");
+	  }
+	System.out.println(count +" times " +find+ " repeating: ");
 	}
  }
-}
+
