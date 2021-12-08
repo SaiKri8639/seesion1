@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class NewAccount /* implements Comparable<NewAccount> */
 {
+	Scanner sc = new Scanner(System.in);
 	private int accountId;
 	private String accHolderName;
 	private int balance;
@@ -45,14 +46,24 @@ public class NewAccount /* implements Comparable<NewAccount> */
 		this.balance = balance;
 	}
 
-	public void deposit(double amount) throws BadFormatException {
+	public void deposit() throws BadFormatException {
+		
+			System.out.println("enter the amount to be added: ");
+			double amount=sc.nextInt();
+//		
 		if (amount < 0) {
+			
 			throw new BadFormatException("Amount can not in negative number: ");
 		}
+		
 		balance += amount;
+		
+		
 	}
 
-	public int withDrawl(double amount) throws InsufficientBalance, BadFormatException {
+	public int withDrawl() throws InsufficientBalance, BadFormatException {
+		System.out.println("enter the amount to be with draw : ");
+		double amount=sc.nextInt();
 		if (amount < 0) {
 			throw new BadFormatException("Amount can not in negative number: ");
 		}
@@ -60,24 +71,27 @@ public class NewAccount /* implements Comparable<NewAccount> */
 			throw new InsufficientBalance("Available Balance : Rs " + balance + "requested for withdrawl :" + amount
 					+ "so transistion can not be completed: ");
 		}
+		else {
 		balance -= amount;
-		return balance;
+		
+		return balance;}
 	}
 
 	public void printAccountDetails() {
-		System.out.println(getaccountId() + " " + accHolderName + " " + balance);
+		System.out.println(getaccountId() + " " + getAccHolderName() + " " + getBalance());
 	}
 
-	Scanner sc = new Scanner(System.in);
+//	Scanner sc = new Scanner(System.in);
 
 //private Object getaccountId;
 	public void searchAccount() {
-		NewAccount n2 = new NewAccount(123456, "Sai Krishna", 500);
+		NewAccount n2 = new NewAccount(123, "sai",1000);
 		System.out.println("enter the account id:");
 		
+//		int accountId1=sc.nextInt();
 		try {
 			int accountId1 = sc.nextInt();
-		if (n2.getaccountId()==accountId1) {
+		if (accountId==accountId1) {
 			System.out.println("account matched: ");
 		} else {
 			System.out.println("not found: ");
