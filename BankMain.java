@@ -8,14 +8,16 @@ public class BankMain
 {
   public static void main(String[] args) throws BadFormatException,InsufficientBalance
   {
-	  Scanner sc = new Scanner(System.in);
-	NewAccount n2 = new NewAccount(123,"Sai Krishna",500);
+//	  Scanner sc = new Scanner(System.in);
+	NewAccount n2 = new NewAccount();
+    n2.createAccount();
+//  n2.printAccountDetails();
 	n2.searchAccount();
 	try {
-//		System.out.println("enter the amount to be added: ");
-//		double amount=sc.nextDouble();
+//	System.out.println();
+//	double amount=sc.nextDouble();
 //	n2.deposit(1000);
-     n2.printAccountDetails();
+//  n2.printAccountDetails();
 	n2.deposit();
     n2.printAccountDetails();
 
@@ -33,6 +35,7 @@ public class BankMain
 	{
 		System.err.println(ex.getMessage());
 	}
+	System.out.println("Account details after transistion are:");
 	n2.printAccountDetails();
 		
   }
