@@ -12,8 +12,7 @@ public class Problem
 				
 			   p.s = "Set from Inner";
 			   System.out.println(p.s);
-			}
-		
+			}	
 		public static void main(String[] args)
 		{
 			Inner i = new Inner();

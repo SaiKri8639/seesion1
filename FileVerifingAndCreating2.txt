@@ -18,7 +18,6 @@ public class FileVerifingAndCreating // C:\Users\Public\Documents
 					return fileRef.getName().endsWith("java");
 				}
 			};
-
 			File[] files = fileRef.listFiles(filter);
 
 			System.out.println("Files are:");
