@@ -1,5 +1,4 @@
 package checkingCodeAssignment;
-
 public class Problem 
 {
 		String s;
