@@ -15,7 +15,7 @@ public class FileVerifingAndCreating // C:\Users\Public\Documents
 			System.out.println(fileRef);
 			FileFilter filter = new FileFilter() {
 				public boolean accept(File fileRef) {
-					return fileRef.getName().endsWith("java");
+				return fileRef.getName().endsWith("java");
 				}
 			};
 

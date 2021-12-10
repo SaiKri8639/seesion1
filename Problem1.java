@@ -1,7 +1,6 @@
 package checkingCodeAssignment;
 public class Problem 
-{
-		String s;
+{		String s;
 		
 		static class Inner
 		{
