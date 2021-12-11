@@ -13,21 +13,23 @@ public class FileVerifingAndCreating // C:\Users\Public\Documents
 		File fileRef = new File(path);
 		if (fileRef.exists()) {
 			System.out.println(fileRef);
-			FileFilter filter = new FileFilter() {
-				public boolean accept(File fileRef) {
-				return fileRef.getName().endsWith("java");
-				}
-			};
+//			FileFilter filter = new FileFilter() {
+//				public boolean accept(File fileRef) {
+//					return fileRef.getName().endsWith("java");
+//				}
+//			};
 
-			File[] files = fileRef.listFiles(filter);
+			File[] files = fileRef.listFiles(file ->{return  file.getName().endsWith("java");});
 
 			System.out.println("Files are:");
+//			System.out.println(Arrays.toString(files));
+			Arrays.stream(files).map(file->file.getName()).forEach(name->System.out.println(name));
 
-			for (int i = 0; i < files.length; i++) {
-
-				System.out.println(Arrays.asList(files[i].getName() + ","));
-
-			}
+//			for (int i = 0; i < files.length; i++) {
+//
+//				System.out.println(Arrays.asList(files[i].getName() + ","));
+//
+//			}
 		} else {
 			System.out.println("please check the path you give");
 		}
